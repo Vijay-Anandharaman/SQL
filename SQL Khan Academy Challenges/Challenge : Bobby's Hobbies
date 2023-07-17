@@ -31,8 +31,8 @@ INSERT INTO hobbies (person_id, name) VALUES (5, "meowing");
 INSERT INTO hobbies (person_id, name) VALUES (6, "Content-Creating");
 
 SELECT persons.name, hobbies.name FROM persons JOIN hobbies
-        ON persons.id = hobbies.person_id;
+       ON persons.id = hobbies.person_id;
         
 SELECT persons.name, hobbies.name FROM persons JOIN hobbies
-        ON persons.id = hobbies.person_id 
-        WHERE persons.name = "Bobby McBobbyFace";
+       ON persons.id = hobbies.person_id 
+       WHERE persons.name = "Bobby McBobbyFace";
