@@ -1,0 +1,81 @@
+/*
+We’ve curated a set of interesting data sets for you: NASA astronauts, Superbowl results, Pokemon stats, NBA 
+players, Top movies, Top countries by population, Solar system objects by size, Marvel characters, Furniture 
+store sales, Earned KA badges, Winston's donut logs, Card game results, and NFL draft picks.
+
+Pick one of those data sets or create a data set like that, and use advanced SELECT queries to discover things
+about the data. What sort of questions might one have about that data, like if they were using it for an app or
+a business idea? Here are some ideas:
+
+What are average, max, and min values in the data?
+What about those numbers per category in the data (using HAVING)?
+What ways are there to group the data values that don’t exist yet (using CASE)?
+What interesting ways are there to filter the data (using AND/OR)?
+*/
+
+
+CREATE TABLE top_movies (id INTEGER PRIMARY KEY, name TEXT, rating INTEGER, released_year INTEGER, genre TEXT);
+
+INSERT INTO top_movies VALUES(1, "Kaththi", 7, 2014, "Action");
+
+INSERT INTO top_movies VALUES(2, "Veetula viseysum", 9, 2022, "Comedy");
+
+INSERT INTO top_movies VALUES(3, "Asvins", 10, 2023, "Horror");
+
+INSERT INTO top_movies VALUES(4, "The raid", 8, 2013, "Action");
+
+INSERT INTO top_movies VALUES(5, "Por thozhil", 10, 2023, "Crime-thriller");
+
+INSERT INTO top_movies VALUES(6, "Master", 8, 2021, "Action");
+
+INSERT INTO top_movies VALUES(7, "Vikram", 9, 2022, "Action");
+
+INSERT INTO top_movies VALUES(8, "Aval", 9, 2019, "Horror");
+
+INSERT INTO top_movies VALUES(9, "The raid-2", 8, 2015, "Action");
+
+INSERT INTO top_movies VALUES(10, "A1", 10, 2020, "Crime-thriller");
+
+INSERT INTO top_movies VALUES(11, "Rocky", 9, 2021, "Action");
+
+INSERT INTO top_movies VALUES(12, "Friends", 9, 2002, "Comedy");
+
+INSERT INTO top_movies VALUES(13, "Asvins", 10, 2023, "Horror");
+
+INSERT INTO top_movies VALUES(14, "Saani kakitham", 7, 2022, "Action");
+
+INSERT INTO top_movies VALUES(15, "Dia", 10, 2020, "Love");
+
+INSERT INTO top_movies VALUES(16, "Kaithi", 7, 2019, "Action");
+
+INSERT INTO top_movies VALUES(17, "jay jay jay jay", 9, 2022, "Comedy");
+
+INSERT INTO top_movies VALUES(18, "Arambam", 10, 2015, "Action");
+
+INSERT INTO top_movies VALUES(19, "Uriyadi", 8, 2015, "Action");
+
+INSERT INTO top_movies VALUES(20, "Moonu", 10, 2012, "Love");
+
+SELECT AVG(rating) as Avg_rating FROM top_movies;
+
+SELECT MAX(rating) as Max_rating FROM top_movies;
+
+SELECT Min(rating) as Min_rating FROM top_movies;
+
+SELECT SUM(rating) as total_rating FROM top_movies;
+
+SELECT name, Max(rating) as Max_rating FROM top_movies GROUP by id HAVING Max_rating = 10;
+
+SELECT name FROM top_movies WHERE genre = "Action" AND released_year = 2014;
+
+SELECT name FROM top_movies WHERE genre = "Comedy" OR released_year = 2013;
+
+SELECT COUNT(rating),
+       CASE
+           WHEN rating = 10 THEN "Excellent movie"
+           WHEN rating = 9  THEN "Very Good"
+           WHEN rating = 8 THEN "Good"
+           ELSE "Avg"
+           END AS "movie_rating"
+           FROM top_movies
+           GROUP BY movie_rating;
