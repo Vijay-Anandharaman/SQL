@@ -1,0 +1,47 @@
+/*
+Create your own store! Your store should sell one type of things, like clothing or bikes, whatever you want your store to specialize in. 
+You should have a table for all the items in your store, and at least 5 columns for the kind of data you think you'd need to store. You 
+should sell at least 15 items, and use select statements to order your items by price and show at least one statistic about the items. 
+*/
+
+
+CREATE TABLE Vijaymotostore (id INTEGER PRIMARY KEY, bikename TEXT, price INTEGER, quantity INTEGER, location TEXT, pincode INTEGER);
+
+INSERT INTO vijaymotostore VALUES (1, "R15 V4", 230000, 8, "Thanjavur", 613001);
+
+INSERT INTO vijaymotostore VALUES (2, "Apache 160", 140000, 15, "Thanjavur", 613001);
+
+INSERT INTO vijaymotostore VALUES (3, "Pulsar 150", 135000, 22, "Thanjavur", 613001);
+
+INSERT INTO vijaymotostore VALUES (4, "KTM RC 290", 250000, 6, "Thanjavur", 613001);
+
+INSERT INTO vijaymotostore VALUES (5, "DUKE 200", 195000, 8, "Thanjavur", 613001);
+
+INSERT INTO vijaymotostore VALUES (6, "TVS XL-50", 53000, 45, "Thanjavur", 613001);
+
+INSERT INTO vijaymotostore VALUES (7, "Scoty Zest", 73000, 32, "Thanjavur", 613001);
+
+INSERT INTO vijaymotostore VALUES (8, "Activa", 99000, 29, "Thanjavur", 613001);
+
+INSERT INTO vijaymotostore VALUES (9, "Passion pro", 92000, 34, "Thanjavur", 613001);
+
+
+INSERT INTO vijaymotostore VALUES (10, "GT-650", 380000, 2, "Thanjavur", 613001);
+
+INSERT INTO vijaymotostore VALUES (11, "ZX10R", 1700000, 1, "Thanjavur", 613001);
+
+INSERT INTO vijaymotostore VALUES (12, "Suzuki GSX1300R Hayabusa", 1800000, 1, "Thanjavur", 613001);
+
+INSERT INTO vijaymotostore VALUES (13, "Honda Shine", 96000, 24, "Thanjavur", 613001);
+
+INSERT INTO vijaymotostore VALUES (14, "Discover-110", 73000, 38, "Thanjavur", 613001);
+
+INSERT INTO vijaymotostore VALUES (15, "RX-100", 120000, 4, "Thanjavur", 613001);
+
+SELECT * FROM vijaymotostore ORDER BY price;
+
+SELECT SUM(quantity) FROM vijaymotostore;
+
+SELECT * FROM vijaymotostore WHERE quantity > 20 ORDER BY price;
+
+SELECT SUM(quantity) FROM vijaymotostore;
