@@ -1,0 +1,38 @@
+/*
+In this project, you’re going to make your own table with some small set of “famous people”, then make more 
+tables about things they do and join those to create nice human readable lists.
+
+For example, here are types of famous people and the questions your data could answer:
+
+Movie stars: What movies are they in? Are they married to each other?
+Singers: What songs did they write? Where are they from?
+Authors: What books did they write?
+Fictional characters: How are they related to other characters? What books do they show up in?
+*/
+
+CREATE table famous_people (id INTEGER PRIMARY KEY AUTOINCREMENT, fullname TEXT, age INTEGER, city TEXT);
+
+INSERT INTO famous_people (fullname, age, city) VALUES ("Elon Musk", 52, "SA");
+                
+INSERT INTO famous_people (fullname, age, city) VALUES ("David Goggins", 48, "US");
+                   
+INSERT INTO famous_people (fullname, age, city) VALUES ("Harshad Mehta", 47, "IN");
+                   
+INSERT INTO famous_people (fullname, age, city) VALUES ("Robin Sharma", 59, "CN");
+                  
+INSERT INTO famous_people (fullname, age, city) VALUES ("Andrew Tate", 36, "US");
+
+CREATE table wealth (id INTEGER PRIMARY KEY AUTOINCREMENT, net_worth TEXT, source TEXT);
+                     
+INSERT INTO wealth (net_worth, source) VALUES ("23410 Crores USD", "TESLA CEO");
+            
+INSERT INTO wealth (net_worth, source) VALUES ("5 Million Dollars", "US NAVY SEAL");
+            
+INSERT INTO wealth (net_worth, source) VALUES ("3542 Crores", "SHARE MARKET");
+            
+INSERT INTO wealth (net_worth, source) VALUES ("10 Million", "PUBLIC SPEAKER");
+            
+INSERT INTO wealth (net_worth, source) VALUES ("365 Million", "MAKEMONEY.IO");
+            
+
+SELECT famous_people.fullname, wealth.net_worth FROM famous_people JOIN wealth ON famous_people.id = wealth.id;
