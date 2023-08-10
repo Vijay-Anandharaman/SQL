@@ -1,0 +1,23 @@
+Retrieve all the books from the table and display their titles, authors, and published years.
+
+
+|    Id   |         Title         |        Author       | Published Year |
+
+|---------|-----------------------|---------------------|----------------|
+
+|    1    |      Harry Potter     |     J.K. Rowling    |      1997      |
+
+|    2    |    The Great Gatsby   | F. Scott Fitzgerald |      1925      |
+
+|    3    | To Kill a Mockingbird |      Harper Lee     |      1960      |
+
+
+CREATE TABLE BookList (Id INTEGER PRIMARY KEY AUTOINCREMENT, Title TEXT, Author TEXT, Published_Year INTEGER);
+                          
+INSERT INTO BookList (Title, Author, Published_Year) VALUES ("Harry Potter", "J.K. Rowling",1997);
+                
+INSERT INTO BookList (Title, Author, Published_Year) VALUES ("The Great Gatsby","F. Scott Fitzgerald",1925);
+                
+INSERT INTO BookList (Title, Author, Published_Year) VALUES ("To Kill a Mockingbird","Harper Lee",1960);
+                
+SELECT * FROM BookList;
